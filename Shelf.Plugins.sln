@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shelf.Plugin.Abstractions",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shelf.Plugin.ClzExport", "samples\Shelf.Plugin.ClzExport\Shelf.Plugin.ClzExport.csproj", "{7B216A7F-D40D-4637-9ED2-DC3CB10AA99B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shelf.Plugin.Gutenberg", "samples\Shelf.Plugin.Gutenberg\Shelf.Plugin.Gutenberg.csproj", "{8F7190D8-9E68-4B7D-BBF6-7446B41DF675}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,9 @@ Global
 		{7B216A7F-D40D-4637-9ED2-DC3CB10AA99B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B216A7F-D40D-4637-9ED2-DC3CB10AA99B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B216A7F-D40D-4637-9ED2-DC3CB10AA99B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F7190D8-9E68-4B7D-BBF6-7446B41DF675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F7190D8-9E68-4B7D-BBF6-7446B41DF675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F7190D8-9E68-4B7D-BBF6-7446B41DF675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F7190D8-9E68-4B7D-BBF6-7446B41DF675}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
-

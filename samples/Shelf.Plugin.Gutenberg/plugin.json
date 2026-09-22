@@ -1,0 +1,22 @@
+{
+  "$schema": "../../schemas/plugin-manifest.schema.json",
+  "id": "com.shelf.official.gutenberg",
+  "name": "Project Gutenberg",
+  "version": "0.1.0",
+  "shelfApiVersion": "0.1",
+  "description": "Searches Project Gutenberg's public-domain ebook catalog for Shelf.",
+  "type": "provider",
+  "capabilities": [
+    "metadata",
+    "covers",
+    "digital-items"
+  ],
+  "permissions": [
+    "network-access"
+  ],
+  "entryPoint": "Shelf.Plugin.Gutenberg.Program",
+  "runtime": {
+    "protocol": "shelf-provider-v1",
+    "command": "Shelf.Plugin.Gutenberg.exe"
+  }
+}
