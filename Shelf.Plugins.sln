@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shelf.Plugin.Abstractions", "src\Shelf.Plugin.Abstractions\Shelf.Plugin.Abstractions.csproj", "{2E14E789-1C4E-4C51-AC91-4C22E0389135}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shelf.Plugin.ClzExport", "samples\Shelf.Plugin.ClzExport\Shelf.Plugin.ClzExport.csproj", "{7B216A7F-D40D-4637-9ED2-DC3CB10AA99B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E14E789-1C4E-4C51-AC91-4C22E0389135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E14E789-1C4E-4C51-AC91-4C22E0389135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E14E789-1C4E-4C51-AC91-4C22E0389135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E14E789-1C4E-4C51-AC91-4C22E0389135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B216A7F-D40D-4637-9ED2-DC3CB10AA99B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B216A7F-D40D-4637-9ED2-DC3CB10AA99B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B216A7F-D40D-4637-9ED2-DC3CB10AA99B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B216A7F-D40D-4637-9ED2-DC3CB10AA99B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
+
