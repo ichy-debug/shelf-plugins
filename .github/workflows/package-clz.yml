@@ -1,0 +1,40 @@
+name: Package CLZ plugin
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/Shelf.Plugin.Abstractions/**'
+      - 'samples/Shelf.Plugin.ClzExport/**'
+      - '.github/workflows/package-clz.yml'
+  pull_request:
+    paths:
+      - 'src/Shelf.Plugin.Abstractions/**'
+      - 'samples/Shelf.Plugin.ClzExport/**'
+      - '.github/workflows/package-clz.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Publish isolated worker
+        shell: pwsh
+        run: |
+          dotnet publish samples/Shelf.Plugin.ClzExport/Shelf.Plugin.ClzExport.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true -o artifacts/clz-plugin
+          Copy-Item samples/Shelf.Plugin.ClzExport/plugin.json artifacts/clz-plugin/plugin.json
+          Compress-Archive -Path artifacts/clz-plugin/* -DestinationPath artifacts/Shelf.ClzImport.zip
+          Move-Item artifacts/Shelf.ClzImport.zip artifacts/Shelf.ClzImport.shelf-plugin
+      - name: Upload plugin package
+        uses: actions/upload-artifact@v4
+        with:
+          name: Shelf.ClzImport
+          path: artifacts/Shelf.ClzImport.shelf-plugin
+          retention-days: 30
