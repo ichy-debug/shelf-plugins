@@ -16,20 +16,21 @@ Plugins return normalized candidates. Shelf remains responsible for validation, 
 
 ## Repository status
 
-The SDK is currently an **experimental 0.x contract**. It defines the intended boundary and allows reference plugins to be developed in public while integration with Shelf Server is being completed. Breaking changes may occur before version 1.0.
+The SDK is currently an **experimental 0.x contract**. Breaking changes may occur before version 1.0.
 
 ## Repository layout
 
 ```text
 src/Shelf.Plugin.Abstractions/       Shared .NET contracts
 samples/Shelf.Plugin.ClzExport/      Reference collection importer
+samples/Shelf.Plugin.Gutenberg/      Project Gutenberg search provider
 schemas/plugin-manifest.schema.json  Plugin manifest schema
 docs/                                Architecture and developer guide
 ```
 
 ## Build
 
-The current reference implementation requires the .NET 8 SDK.
+The current reference implementations require the .NET 8 SDK.
 
 ```bash
 dotnet build Shelf.Plugins.sln
@@ -43,9 +44,8 @@ The SDK, documentation, and reference plugins in this repository are licensed un
 
 Shelf and the Shelf name are separate from this source-code license. See [NOTICE](NOTICE).
 
-## CLZ reference importer
+## Official examples
 
-The sample importer demonstrates how a plugin can read a user-provided collection export, normalize common fields, report warnings, and return an import preview.
+The CLZ importer reads a user-provided export and returns an import preview. CLZ and Collectorz.com are trademarks of their respective owners; this project is not affiliated with or endorsed by Collectorz.com.
 
-CLZ and Collectorz.com are trademarks of their respective owners. The reference importer is not affiliated with or endorsed by Collectorz.com and does not log in to or access a CLZ account.
-
+The Project Gutenberg provider searches Gutenberg's public OPDS catalog. It does not scrape pages or bypass access controls. Shelf remains responsible for downloading and validating the selected EPUB.
