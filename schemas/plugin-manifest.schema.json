@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shelf.example/schemas/plugin-manifest.schema.json",
+  "title": "Shelf plugin manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "version", "shelfApiVersion", "type", "capabilities", "permissions", "entryPoint"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(\\.[a-z0-9-]+)+$" },
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+([+-].*)?$" },
+    "shelfApiVersion": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },
+    "description": { "type": "string" },
+    "type": { "enum": ["import", "provider"] },
+    "capabilities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "enum": ["metadata", "covers", "pricing", "physical-items", "digital-items"] }
+    },
+    "permissions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "enum": ["read-selected-files", "read-selected-folders", "network-access", "credential-access"] }
+    },
+    "entryPoint": { "type": "string", "minLength": 1 }
+  }
+}
+
