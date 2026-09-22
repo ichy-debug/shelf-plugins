@@ -1,0 +1,13 @@
+{
+  "$schema": "../../schemas/plugin-manifest.schema.json",
+  "id": "com.shelf.reference.clz-export",
+  "name": "CLZ Export Importer",
+  "version": "0.1.0",
+  "shelfApiVersion": "0.1",
+  "description": "Imports a collection from a user-provided CLZ XML export.",
+  "type": "import",
+  "capabilities": ["metadata", "covers", "physical-items"],
+  "permissions": ["read-selected-files"],
+  "entryPoint": "Shelf.Plugin.ClzExport.ClzExportPlugin"
+}
+
