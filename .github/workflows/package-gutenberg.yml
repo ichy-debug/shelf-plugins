@@ -1,0 +1,38 @@
+name: Package Gutenberg plugin
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'samples/Shelf.Plugin.Gutenberg/**'
+      - '.github/workflows/package-gutenberg.yml'
+  pull_request:
+    paths:
+      - 'samples/Shelf.Plugin.Gutenberg/**'
+      - '.github/workflows/package-gutenberg.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Publish isolated provider
+        shell: pwsh
+        run: |
+          dotnet publish samples/Shelf.Plugin.Gutenberg/Shelf.Plugin.Gutenberg.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true -o artifacts/gutenberg-plugin
+          Copy-Item samples/Shelf.Plugin.Gutenberg/plugin.json artifacts/gutenberg-plugin/plugin.json
+          Compress-Archive -Path artifacts/gutenberg-plugin/* -DestinationPath artifacts/Shelf.Gutenberg.zip
+          Move-Item artifacts/Shelf.Gutenberg.zip artifacts/Shelf.Gutenberg.shelf-plugin
+      - name: Upload plugin package
+        uses: actions/upload-artifact@v4
+        with:
+          name: Shelf.Gutenberg
+          path: artifacts/Shelf.Gutenberg.shelf-plugin
+          retention-days: 30
