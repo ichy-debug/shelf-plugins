@@ -35,7 +35,7 @@ The current reference implementation requires the .NET 8 SDK.
 dotnet build Shelf.Plugins.sln
 ```
 
-Start with [Building your first plugin](docs/getting-started.md), then read the [architecture](docs/architecture.md).
+Users can follow [Installing plugins in Shelf](docs/installing-plugins.md). Developers should start with [Building your first plugin](docs/getting-started.md), then read the [architecture](docs/architecture.md).
 
 ## Licensing
 
