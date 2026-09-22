@@ -43,7 +43,7 @@ my-plugin.shelf-plugin
 
 The manifest must conform to [the public schema](../schemas/plugin-manifest.schema.json).
 
-Shelf currently accepts packages up to 25 MB and at most 100 MB after expansion. Packages containing path traversal entries or symbolic links are rejected.
+Shelf currently accepts packages up to 100 MB and at most 250 MB after expansion. Packages containing path traversal entries or symbolic links are rejected.
 
 ## Permissions
 
@@ -60,6 +60,6 @@ Plugins do not receive direct Shelf database access.
 
 ## Current status
 
-The plugin API is experimental (`0.x`). Shelf can install, discover, and validate packages. Third-party code execution will be introduced through an isolated worker process; Shelf will not load arbitrary community assemblies into the main server process.
+The plugin API is experimental (`0.x`). Shelf can install, discover, and validate packages. Shelf 0.6.22 can run previews with the official CLZ reference plugin in a separate worker process. Community plugin execution remains disabled; Shelf does not load arbitrary community assemblies into the main server process.
 
 Package upgrades, uninstall controls, publisher signatures, and a plugin directory are planned follow-ups.
